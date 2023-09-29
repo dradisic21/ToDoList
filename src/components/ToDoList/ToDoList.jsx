@@ -1,14 +1,15 @@
 import "../../styles/ToDoList.scss";
 import { Button } from "../UI/Button";
 
+
 export function ToDoList({ tasks, toggleTask, deleteTask }) {
-
-
+    
   return (
     <div className="container-list">
       {tasks.map((task, index) => (
         <div className={`task-box ${task.completed ? 'completed' : ''}`} key={index}>
           <div className="content-task">
+            <div className="color-task"></div>
             <div className="task-text">
               <p className={task.completed ? 'completed-text' : ''}>{task.text}</p>
             </div>

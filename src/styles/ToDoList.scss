@@ -15,6 +15,13 @@
   .content-task {
     display: flex;
 
+    .color-task {
+      margin-left: 5px;
+      height: 70px; 
+      width: 5px; 
+      border-radius: 10px;
+      background-color: rgb(252, 67, 0);
+    }
 
     .task-text {
       display: flex;
@@ -24,7 +31,7 @@
       min-width: 150px;
       max-width: 350px;
       word-break: break-word;
-      padding-left: 10px;
+      padding-left: 8px;
 
       p {
         &.completed-text {
