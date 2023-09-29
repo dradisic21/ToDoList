@@ -2,13 +2,15 @@ import "../../styles/ToDoList.scss";
 import { Button } from "../UI/Button";
 
 export function ToDoList({ tasks, toggleTask, deleteTask }) {
+
+
   return (
     <div className="container-list">
       {tasks.map((task, index) => (
-        <div className="task-box" key={index}>
+        <div className={`task-box ${task.completed ? 'completed' : ''}`} key={index}>
           <div className="content-task">
             <div className="task-text">
-              <p>{task.text}</p>
+              <p className={task.completed ? 'completed-text' : ''}>{task.text}</p>
             </div>
             <div className="controls">
               <div className="check-list">
@@ -35,6 +37,9 @@ export function ToDoList({ tasks, toggleTask, deleteTask }) {
                   onClick={() => deleteTask(index)}
                 />
               </div>
+            </div>
+            <div className="date-task">
+              <span>{task.created}</span>
             </div>
           </div>
         </div>
