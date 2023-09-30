@@ -16,6 +16,7 @@ export function ToDoForm({ addTask }) {
 
   return (
     <div className="container-box">
+      
       <form onSubmit={handleSubmit} className="form-field">
         <Input
           type="text"
@@ -25,6 +26,9 @@ export function ToDoForm({ addTask }) {
         />
         <Button className="form-button" name="Add" type="submit" />
       </form>
+      <div className="img-box">
+        <img src="./assets/background.png" alt=""/>
+      </div>
     </div>
   );
 }

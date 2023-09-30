@@ -40,7 +40,9 @@ export function ToDoList({ tasks, toggleTask, deleteTask }) {
               </div>
             </div>
             <div className="date-task">
-              <span>{task.created}</span>
+              <span>{task.created.split('\n')[0]}</span>
+              <div className="month">{task.created.split('\n')[1]}</div>
+              <div className="time">{task.created.split('\n')[2]}</div>
             </div>
           </div>
         </div>

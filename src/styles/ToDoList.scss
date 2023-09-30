@@ -16,11 +16,10 @@
     display: flex;
 
     .color-task {
-      margin-left: 5px;
-      height: 70px; 
-      width: 5px; 
-      border-radius: 10px;
-      background-color: rgb(252, 67, 0);
+      height: 100px;
+      width: 48px;
+      border-radius: 10px 0 0 10px;
+      background-color: #FFD800;
     }
 
     .task-text {
@@ -97,27 +96,8 @@
           left: -1px;
           width: 25px;
           height: 25px;
-          border: 1px solid #e5e5e5;
-          background: repeating-radial-gradient(
-              circle at 50% 50%,
-              rgba(200, 200, 200, 0.2) 0%,
-              rgba(200, 200, 200, 0.2) 2%,
-              transparent 2%,
-              transparent 3%,
-              rgba(200, 200, 200, 0.2) 3%,
-              transparent 3%
-            ),
-            conic-gradient(
-              white 0%,
-              silver 10%,
-              white 35%,
-              silver 45%,
-              white 60%,
-              silver 70%,
-              white 80%,
-              silver 95%,
-              white 100%
-            );
+          border: 1px solid #8e8e8e;
+          background: #f8f8f8;
           border-radius: 50%;
           box-shadow: 3px 5px 10px 0 rgba(0, 0, 0, 0.4);
           transition: left 0.4s;
@@ -136,13 +116,23 @@
 
     .date-task {
       position: absolute;
-      right: 10px;
-      bottom: 10px;
+      left: 10px;
+      top: 30%;
       
       span {
-        font-size: 9px;
+        font-size: 15px;
         font-weight: 600;
         font-style: italic;
+      }
+      .month {
+        font-size: 15px;
+        font-weight: 600;
+        font-style: italic;
+      }
+      .time {
+        padding-top: 2px;
+        font-size: 10px;
+        font-weight: 500;
       }
     }
   

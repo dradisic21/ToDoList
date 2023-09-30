@@ -15,15 +15,19 @@ export function ToDoListPage() {
 
   function addTask(newTask) {
     const now = new Date();
-    const options = {
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-      hour: '2-digit',
-      minute: '2-digit',
-    };
-    const formattedDate = now.toLocaleString('hr-HR', options);
-    setTasks([...tasks, { text: newTask, created: formattedDate, completed: false }]);
+  const options = {
+    day: '2-digit',
+    month: 'short',
+    hour: '2-digit',
+    minute: '2-digit',
+  };
+
+  const formattedDate = now.toLocaleString('hr-HR', options);
+
+  const [date, month, time] = formattedDate.split(' ');
+
+  const result = `${date}\n${month}\n${time}`;
+  setTasks([...tasks, { text: newTask, created: result, completed: false }]);
   }
 
   function toggleTask(index) {
