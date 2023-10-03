@@ -14,20 +14,7 @@ export function ToDoListPage() {
   }, [tasks]);
 
   function addTask(newTask) {
-    const now = new Date();
-  const options = {
-    day: '2-digit',
-    month: 'short',
-    hour: '2-digit',
-    minute: '2-digit',
-  };
-
-  const formattedDate = now.toLocaleString('hr-HR', options);
-
-  const [date, month, time] = formattedDate.split(' ');
-
-  const result = `${date}\n${month}\n${time}`;
-  setTasks([...tasks, { text: newTask, created: result, completed: false }]);
+    setTasks([...tasks, { text: newTask, created: new Date(), completed: false }]);
   }
 
   function toggleTask(index) {

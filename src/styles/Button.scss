@@ -28,8 +28,8 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: rgb(20, 20, 20);
-  border: none;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #e3e3e3;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -53,7 +53,7 @@
     transition-duration: 0.3s;
 
     path {
-      fill: white;
+      fill: black;
     }
   }
 
@@ -73,6 +73,10 @@
       -o-transform: rotate(360deg);
       -ms-transform: rotate(360deg);
       transform: rotate(360deg);
+
+      path {
+        fill: white; /* Boja ikone nakon hovera */
+      }
     }
 
     &::before {

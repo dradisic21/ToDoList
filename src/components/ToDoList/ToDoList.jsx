@@ -1,32 +1,29 @@
-import "../../styles/ToDoList.scss";
+import { FormatDateTime } from "../FormatDateTime/FormatDateTime";
+import { ToggleButton } from "../UI/ToggleButton";
 import { Button } from "../UI/Button";
-
+import "../../styles/ToDoList.scss";
 
 export function ToDoList({ tasks, toggleTask, deleteTask }) {
-    
   return (
     <div className="container-list">
       {tasks.map((task, index) => (
-        <div className={`task-box ${task.completed ? 'completed' : ''}`} key={index}>
+        <div
+          className={`task-box ${task.completed ? "completed" : ""}`}
+          key={index}
+        >
           <div className="content-task">
             <div className="color-task"></div>
             <div className="task-text">
-              <p className={task.completed ? 'completed-text' : ''}>{task.text}</p>
+              <p className={task.completed ? "completed-text" : ""}>
+                {task.text}
+              </p>
             </div>
             <div className="controls">
-              <div className="check-list">
-                <div className="toggle-border">
-                  <input
-                    id={index}
-                    type="checkbox"
-                    checked={task.completed}
-                    onChange={() => toggleTask(index)}
-                  />
-                  <label htmlFor={index}>
-                    <div className="handle"></div>
-                  </label>
-                </div>
-              </div>
+              <ToggleButton
+                index={index}
+                checked={task.completed}
+                onChange={() => toggleTask(index)}
+              />
               <div className="delete-task">
                 <Button
                   className="delete-button"
@@ -39,11 +36,7 @@ export function ToDoList({ tasks, toggleTask, deleteTask }) {
                 />
               </div>
             </div>
-            <div className="date-task">
-              <span>{task.created.split('\n')[0]}</span>
-              <div className="month">{task.created.split('\n')[1]}</div>
-              <div className="time">{task.created.split('\n')[2]}</div>
-            </div>
+            <div className="date-task"><FormatDateTime created={task.created} /></div>
           </div>
         </div>
       ))}
