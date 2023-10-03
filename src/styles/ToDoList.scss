@@ -4,7 +4,7 @@
   .task-box {
     width: 100%;
     max-width: 600px;
-    min-height: 100px;
+    min-height: 70px;
     border-radius: 10px;
     background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
@@ -19,7 +19,7 @@
       display: flex;
 
       .color-task {
-        height: 100px;
+        min-height: 70px;
         width: 48px;
         border-radius: 10px 0 0 10px;
         background-color: #FFD800;
@@ -121,7 +121,7 @@
       .date-task {
         position: absolute;
         left: 10px;
-        top: 30%;
+        top: 10%;
         
         span {
           font-size: 15px;
